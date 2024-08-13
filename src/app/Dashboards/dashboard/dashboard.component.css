@@ -1,0 +1,171 @@
+
+.dashboard{
+    height: 92vh;
+    overflow-y: auto;
+}
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track (background of the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle (scrollbar itself) */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e30707;
+  }
+  
+  .allDashboardItems{
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .reports{
+    height:550px;
+    width: 25%;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .rpt1{
+    width: 100%;
+    height: 54%;
+    background-color:rgb(256,4,76);
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  .rpt1 h3{
+    padding-left:20px;
+    padding-top: 20px;
+  }
+  .rpt2{
+    width: 100%;
+    height: 46%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .rpt{
+    height: 140px;
+    width: 42%;
+    background-color: blue;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    padding-left: 10px;
+    font-weight: 700;
+  }
+  .rpt i{
+    font-size: 30px;
+  }
+  .RowReport{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    position: relative;
+    justify-content:center;
+    bottom: 66px;
+  }
+  .fRR1{
+    background-color:#F7DCB9;
+    color: #f67b1e;
+
+  }
+    
+  .fRR2{
+    background-color:rgb(243, 212, 157);
+    color: rgb(139, 92, 4);
+  }
+  .sRR1{
+    background-color: #FFB1B1;
+    color:hsl(0, 59%, 55%) ;
+  }
+  .sRR2{
+    background-color: #BBE9FF;
+    color:#033a54 ;
+  }
+  .teamLeads{
+    height: 550px;
+    width: 75%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Team lead table css */
+  .headings{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .headingName{
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .headingName h2{
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .headingName p{
+    font-weight: 700;
+    color: rgb(111, 111, 111);
+  }
+  .addButton{
+    align-self: center;
+  }
+  .addButton button{
+    background-color: #BBE9FF;
+    color:#157cac ;
+    border: none;
+    padding: 0px 8px 4px 8px;
+    margin-right: 4px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all ease-in ;
+  }
+  .addButton button:hover{
+    color:white;
+    background-color:#5462fc ;
+  }
+  .addButton button span{
+    font-size: 26px;
+  }
+  @media(max-width: 992px) {
+    .reports{
+        width: 35%;
+    }
+    .teamLeads{
+        width:65%;
+    }
+  }
+  @media(max-width: 576px){
+    .allDashboardItems{
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-direction: column;
+      }
+      .reports{
+        width: 100%;
+      }
+      .teamLeads{
+        width: 100%;
+      }
+  }

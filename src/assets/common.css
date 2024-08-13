@@ -1,0 +1,158 @@
+/*css for the heading*/
+.userDataHeading{
+  display: flex;
+  justify-content: space-between;
+}
+.heading{
+  margin-left: 1%;
+  font-weight: 600;  
+  
+}
+.heading h2{
+  font-size: 24px;
+
+}
+.heading p{
+  color: rgb(149, 147, 147);
+}
+.heading p span{
+  color: rgb(94, 93, 93);
+  margin-left: 8px;
+}
+.buttons{
+  align-self: center;
+  display: flex;
+  gap: 1rem;
+  
+  margin-right: 1%;
+}
+.btn{
+  font-size:17px;
+  font-weight: 600;
+  border: none;
+  background-color: blue;
+  color:white;
+  padding: 6px 16px 6px 16px ;
+  border-radius: 6px;
+}
+.Filter{
+  background-color: rgb(241, 231, 231);
+  color: black;
+}
+/*Css for the search bar and add button*/
+.tableHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px 4px 16px;
+}
+.searchBar input{
+    font-size: 18px;
+    color: #a39e9e;
+    font-weight: 500;
+    padding-left: 40px;
+    border:none;
+    background-color: rgb(229, 224, 224);
+    border-radius: 7px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    
+}
+.searchBar i{
+    position: relative;
+    top: 2px;
+    right: 88%;
+    font-size: 24px;
+    color: #a39e9e;
+}
+.searchBar input:focus{
+ border:1px solid #c5c2c2;
+outline: none;
+}
+.addButton .btn{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* Css for the table*/
+.tables{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-y:auto;
+  }
+  .tables table{
+    width: 98%;
+    border: none;
+  }
+  .tables table thead tr th{
+    font-size: 16px;
+    color: rgb(148, 148, 148);
+  }
+  .tables table thead tr th:nth-child(1) {
+    width: 400px; 
+    }
+    .tables table tbody tr{
+        width: 100%;
+        border-top: 1px solid dashed;
+    }
+    .tables table tbody tr td{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1px dashed rgb(136, 132, 132);
+    }
+    .tables table thead tr th{
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+  .tables table thead tr th:nth-child(4), td:nth-child(4){
+    width: 20%;
+    padding-left: 6%;
+  }
+  .tables table tbody tr td:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .tableImage img{
+    width: 60px;
+    height:60px;
+    border: 2px solid black;
+  }
+  .tableIcon{
+    display: flex;
+    gap: 4px;
+  }
+  .tableIcon i{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(250, 245, 245);
+    display: flex;
+    justify-content: center;
+    color: rgb(151, 149, 149);
+    font-size: 20px;
+    font-weight: 800;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .allText h2{
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+  }
+ 
+  .allText p{
+    color: rgb(141, 139, 139) ;
+    font-weight: 700;
+  }
+
+  /*Disable button of the form*/
+  
+  .disabled-button {
+    background-color: #ccc !important; /* Light gray background */
+    color: #666; /* Gray text color */
+    cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+  }
+
+
+
+

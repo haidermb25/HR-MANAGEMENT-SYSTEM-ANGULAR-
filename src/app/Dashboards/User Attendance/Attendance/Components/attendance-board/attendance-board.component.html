@@ -1,0 +1,69 @@
+<div class="attendanceBoard">
+  <div class="Topic">Daily Attendance.</div>
+  <!--Add time and department for the attendance-->
+  <div class="filter">
+    <div class="datefilter"> 
+      <select (change)="getDeptId($event)" required>
+        <option value="" disabled selected>Select Department</option>
+        <option  *ngFor="let item of deptData" [value]="item.departmentId">
+          {{ item.deptName }}
+        </option>
+      </select>
+      <input type="date" [(ngModel)]="selectedDate" />
+    </div>
+    <div class="addAttendance">
+      <button class="cancel" (click)="clearData()">Cancel</button>
+      <button class="add" (click)="storeDepartmentEmployee()">
+        <span>+</span> Add
+      </button>
+    </div> 
+  </div>
+  <!--Show the board Table according to the form-->
+  <div class="boardTable" *ngIf="empData.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>In Time</th>
+          <th>Out Time</th>
+          <th>Status</th>
+          <th>Add</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of empData">
+          <td>{{ item.employeeId }}</td>
+          <td>{{ item.firstName }}</td>
+          <td>{{ item.hireDate }}</td>
+          <td>{{ item.hireDate }}</td>
+          <td>
+            <button
+              [ngClass]="{
+                noneColor: attendNone,
+                greenColor: attendPresent,
+                redColor: attendApsent,
+                yellowColor: attendLeave
+              }"
+            >
+              Leave
+            </button>
+          </td>
+          <td>
+            <button class="addAttend" (click)="showAttendBox()">Add</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="noData" *ngIf="empData.length == 0">
+    <h3>No Employee Data</h3>
+  </div>
+</div>
+
+<div
+  class="attendanceBox"
+  [ngClass]="showattend == true ? 'attendanceBoxShow' : 'attendanceBoxHide'"
+>
+  <app-attend-dialog-box (emitter)="hideAttendBox()"></app-attend-dialog-box>
+</div>

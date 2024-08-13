@@ -1,0 +1,226 @@
+
+/* .mainContainer{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+} */
+
+/*Some generic classes*/
+
+/* SideBar of the container */
+/* ------------------Start------------------ */
+.sideBar{
+    background-color: #1f212a;
+    display: block;
+    width: 34vh;
+    z-index: 10;
+}
+.companyName{
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.companyName #icon{
+    font-weight: 900;
+    color: rgb(222, 73, 73);
+    font-size: 40px;
+    margin-right: 6px;
+    margin-top: 14px;
+}
+.companyName #name{
+    margin-top: 4x;
+}
+.line{
+    border-top: 2px solid rgb(79, 78, 78);
+    margin-top: 10px;
+}
+.Module{
+    margin-top: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 4px;
+    justify-content:flex-start;
+    flex-direction:column;
+    gap: 5px;
+    font-size: 17px;
+}
+.dashboard{
+    padding: 8px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.dropDownIcon {
+    margin-left: auto;
+}
+
+.dashboard:hover{
+    background-color: #5c5d5f;
+    color: white;
+}
+.dashboard a{
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+}
+.dashboard i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.topicName{
+    margin-top: 30px;
+    margin-left: 10PX;
+    font-size: 14px;
+    font-weight: 600px;
+    color: #9c9c9e;
+}
+/*COLOR CLASS*/
+.Pages a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+.Pages a i{
+    margin-right: 10px;   
+    color: white;
+}
+.dropDown li{
+    cursor: pointer;
+}
+.showDropDownPages {
+    display: block;
+}
+.hideDropDownPages{
+    display: none;
+}
+.showDropDownAccount {
+    display: block;
+}
+.hideDropDownAccount {
+    display: none;
+}
+.showDropDownError {
+    display: block;
+}
+.hideDropDownError {
+    display: none;
+}
+.showDropDownWidgets{
+    display: block;
+}
+.hideDropDownWidgets{
+    display: none;
+}
+.showDropDownUser{
+    display: block;
+}
+.hideDropDownUser{
+    display: none;
+}
+
+.dropDown ul li a{
+    text-decoration: none;
+    color: #9c9c9e;
+}
+
+.Pages .dropDownIcon{
+    transform: rotate(-90deg);
+}
+
+/* CSS of the dropDown Menus*/
+.dropDownAccount{
+    display: none;
+}
+.dashboard .dropDownIcon{
+    transform: rotate(-90deg);
+}
+/*Css of the top header*/
+.options ul{
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+}
+.options ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 6px 12px 6px 12px;
+    border-radius: 2px;
+}
+.options ul li:hover{
+    background-color: rgb(247, 245, 245);
+    color: blue;
+}
+.options{
+    width: 400px;
+    height:60px;
+    font-size: 16px;
+    color: #888889;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+/* ------------------End------------------ */
+
+
+
+/* ContentBox of the container */
+
+
+/* ------------------Start------------------ */
+.header1{
+    position: fixed;
+    top: 0;
+}
+.header{
+    height: 8vh;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(231, 231, 231, 0.8), 0 6px 20px 0 rgba(243, 240, 240, 0.05);
+}
+.header button{
+    display: none;
+}
+.mainContentBody{
+    margin-top: 3vh;
+    min-height: 89vh;
+    max-height: max-content;
+    width: 100%;
+}
+.help{
+    margin-left: 2px;
+}
+
+/* ------------------End------------------ */
+
+
+/* For the different screen sizes*/
+
+@media(max-width: 992px) {
+     .mainContainer{
+        position: absolute;
+    } 
+
+    .sideBar{
+        display: none;
+        position: relative;
+        
+    }
+
+    .header button{
+        display: block;
+    }
+}
+
+
+@media(max-width: 576px){
+    .sideBar{
+        display: none;
+        flex: 0 0 32.33%;
+    }
+}

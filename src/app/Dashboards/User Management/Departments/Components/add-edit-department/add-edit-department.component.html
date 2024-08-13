@@ -1,0 +1,59 @@
+<div class="departmentForm">
+  <div class="header">
+    <div class="name">
+      <h3>Department Details</h3>
+    </div>
+    <div class="close">
+      <button (click)="closeDepartmentDialog()">&times;</button>
+    </div>
+  </div>
+  <form [formGroup]="deptForm" novalidate (ngSubmit)="AddDept()">
+    <div class="deptName">
+      <label for="">Dept Name:<span>*</span> </label>
+      <input
+        type="text"
+        placeholder="Enter Your Department Name"
+        formControlName="deptName"
+      />
+      <!--Start validation-->
+      <div
+        class="text-danger"
+        *ngIf="value['deptName'].touched && value['deptName'].invalid"
+      >
+        <div
+          *ngIf="
+            value['deptName'].errors && value['deptName'].errors['required']
+          "
+        >
+          *Required
+        </div>
+        <div
+          *ngIf="
+            value['deptName'].errors && value['deptName'].errors['minlength']
+          "
+        >
+          Minimum 3 length
+        </div>
+      </div>
+    </div>
+    <div class="deptHead">
+      <label for="">Dept Head:</label>
+      <select name="" id="" formControlName="deptHeadId">
+        <option value="" disabled selected>Select Nationality</option>
+        <option *ngFor="let item of employeeData" [value]="item.employeeId">
+          {{ item.firstName }} {{ item.lastName }}
+        </option>
+      </select>
+    </div>
+    <div class="deptHeadButton">
+      <button type="reset">Reset</button>
+      <button
+        class="submit"
+        [disabled]="!deptForm.valid"
+        [ngClass]="{ 'disabled-button': !deptForm.valid }"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

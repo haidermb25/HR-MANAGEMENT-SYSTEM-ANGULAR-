@@ -1,0 +1,238 @@
+.dialogBox{
+    height: 100vh;
+    width: 50vw;
+    z-index: 4;
+    color: black; 
+    background-color:rgb(255, 255, 255);
+    border: 1px solid rgb(199, 198, 198);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all ease-in 1s;
+    overflow-y:auto;
+}
+.header{
+    height: 10vh;
+    border-bottom: 2px solid rgb(197, 196, 196);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px 0px 10px;
+}
+.header button{
+     z-index: 5;
+    font-size: 30px;
+    color: rgb(123, 122, 122);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+} 
+.Topic{
+    margin: 4px 0px 0px 8px;
+}
+.dialogForm{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 1rem;
+} 
+.firstModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.part1{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 80%;
+}
+.part1 .input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 8%;
+    width: 100%;
+}
+.part1 .input input{
+    width: 100%;
+}
+.input label{
+    align-self: flex-start;
+}
+.part2{
+    width: 30%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+}
+input[type="file"]{
+    display: none;
+}
+.part2 button{
+    width: 150px;
+    color: white;
+    background-color: rgb(3, 158, 3);
+    border: none;
+    border-radius: 6px;
+    padding: 6px 8px 6px 8px;
+}
+.part2 img{
+    height: 150px;
+    width: 150px;
+    background-color: rgb(121, 119, 119);
+    border-radius: 4px;
+    border: 1px solid  rgb(240, 238, 238);
+}
+.secondModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.secondModule .input{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 30%;
+}
+.secondModule .input select{
+    width: 100%;
+}
+.secondModule .input input{
+    width: 100%;
+}
+.thirdModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.thirdModule .input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+.thirdModule .input input{
+    width: 100%;
+}
+.fourthModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.fourthModule .input{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.fourthModule .input select{
+    width: 100%;
+}
+
+.fourthModule .input h5{
+    display: inline;
+}
+
+.fifthModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.fifthModule .input{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 1.5rem;
+}
+.fifthModule .input .Option{
+  display: flex;
+  gap: 1rem;
+}
+.fifthModule .input .Gender{
+    font-size: 18px;
+    font-weight: 700;
+}
+.sixthModule{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 40px;
+}
+.sixthModule .input{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 0.5rem;
+}
+.sixthModule .input select{
+    width: 100%;
+}
+.seventhModule{
+    display: flex;
+    justify-content:space-between;
+    padding: 0px 20px 0px 40px;
+}
+.seventhModule .input{
+    width: 47%;
+    flex-direction: column;
+    display: flex;
+    gap: 0.5rem;
+}
+.seventhModule .input input{
+    width: 100%;
+}
+.line{
+    width: 100%; 
+    border-bottom: 2px solid rgb(197, 196, 196);
+}
+.buttonModule{
+    display: flex;
+    justify-content: right;
+    padding-right: 32px;
+    gap: 1rem;
+}
+.buttonModule button{
+    border: none;
+    color: white;
+    background-color: blue;
+    padding: 8px 22px 8px 22px;
+    border-radius: 6px;
+}
+.buttonModule button[type="reset"]{
+    background-color: white;
+    color: black;
+    border: 0.5px solid rgb(224, 222, 222);
+}
+input{
+    font-size: 18px;
+    color: #a39e9e;
+    width: 80%;
+    font-weight: 500;
+    padding-left: 8px;
+    border:none;
+    background-color: rgb(229, 224, 224);
+    border-radius: 7px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+select{
+    font-size: 18px;
+    color: #a39e9e;
+    width: 66%;
+    font-weight: 500;
+    padding-left: 2px;
+    border:none;
+    background-color: rgb(229, 224, 224);
+    border-radius: 7px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.is-invalid {
+    border: 1px solid red;
+  }
+

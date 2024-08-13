@@ -1,0 +1,112 @@
+<div class="UserData">
+  <div class="userDataHeading">
+    <div class="heading">
+      <h2>Users</h2>
+      <p>User Management <span>Users</span></p>
+    </div>
+    <div class="buttons">
+      <button class="Filter btn">Filter</button>
+      <button class="Create btn">Create</button>
+    </div>
+  </div>
+  <div class="userDataTable">
+    <div class="tableHeader">
+      <div class="searchBar">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          placeholder="Search User"
+          (input)="searchEmployee()"
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="addButton">
+        <button class="btn" (click)="showDialogBoxForm()">Add Employee</button>
+      </div>
+    </div>
+    <div class="tables">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Last Login</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userData">
+            <td>
+              <div class="tableImage">
+                <h3>{{ item.firstName?.charAt(0)?.toUpperCase() }}</h3>
+              </div>
+              <div class="allText tableText">
+                <h2>{{ item.firstName }}</h2>
+                <p>{{ item.lastName }}</p>
+              </div>
+            </td>
+            <td>
+              <div
+                class="allText teamLeadProject"
+                style="color: black; display: block"
+              >
+                <p>{{ item.email }}</p>
+              </div>
+            </td>
+            <td>
+              <div class="allText teamLeadProject">
+                <p>{{ item.employmentStatus }}</p>
+              </div>
+            </td>
+            <td>
+              <div class="allText">
+                <p>{{ item.hireDate }}</p>
+              </div>
+            </td>
+            <td>
+              <div class="tableIcon">
+                <i class="fa-solid fa-info" (click)="showUserDetailForm()"></i>
+                <i
+                  class="fa-solid fa-pen"
+                  (click)="editEmployee(item.employeeId ? item.employeeId : 0)"
+                ></i>
+                <i
+                  class="fa-solid fa-trash"
+                  (click)="
+                    deleteEmployeeData(item.employeeId ? item.employeeId : 0)
+                  "
+                ></i>
+              </div>
+            </td>
+            <td class="userId">{{ item.employeeId }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablePagination">
+      <div class="pagination">
+        <button (click)="paginatorCountChanger('Decrement')">PREV</button>
+        <h4>{{ tablePaginatorCount }} of 50</h4>
+        <button (click)="paginatorCountChanger('Increment')">NEXT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--This is my component where I add and edit the user data-->
+<div
+  class="dialogBox"
+  [ngClass]="showDialog === true ? 'showDialogBox' : 'hideDialogBox'"
+>
+  <app-add-edit-user
+    (dataEmitter)="hideDialogBoxForm($event)"
+    [employeeId]="employeeId"
+  ></app-add-edit-user>
+</div>
+<!--This is the component where I show the user detail-->
+<div [ngClass]="showDetail === true ? 'showUserInfoBox' : 'hideUserInfoBox'">
+  <app-user-info (dataEmitter)="hideUserDetailForm($event)"></app-user-info>
+</div>

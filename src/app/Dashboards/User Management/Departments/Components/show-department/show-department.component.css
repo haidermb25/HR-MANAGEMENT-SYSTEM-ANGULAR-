@@ -1,0 +1,88 @@
+.departmentData{
+    background-color: white;
+    color: black;
+    height: 86vh;
+    width: 100%;
+}
+.departmentBox{
+    border: 0.5px solid rgb(220, 218, 218);
+    height: 90%;
+    border-radius: 10px;    
+}
+
+/*Department box where where info show*/
+.itemBox {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 10px;
+    max-height: 90%;
+    flex-wrap: wrap;
+    overflow-y: auto;
+  }
+  
+  .deptBox {
+    height: 178px;
+    width: 308px; /* Adjust to ensure items fit within container */
+    border: 0.5px solid rgb(220, 218, 218);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+  
+.headName h3{
+    font-weight: 900;
+}
+.deptIcons{
+    display: flex;
+    justify-content: space-between;
+}
+.deptIcons .icons{
+    display: flex;
+    gap: 0.5rem;
+}
+.deptIcons .icons i{
+    background-color: rgb(196, 194, 194);
+    color: rgb(66, 65, 65);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.pictures{
+    display: flex;
+}
+.pictures .item{
+    height: 40px;
+    width:40px;
+    color: white;
+    background-color: blue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+.closeDepartmentBox{
+    position: absolute;
+    top: -400px;
+    left:40vw;
+    transition: all ease 0.5s;
+} 
+
+.showDepartmentBox{
+    position: absolute;
+    top: 220px;
+    left:40vw;
+    transition: all ease 0.5s;
+
+} 
+

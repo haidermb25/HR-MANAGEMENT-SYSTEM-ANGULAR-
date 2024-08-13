@@ -1,0 +1,147 @@
+<!-- Main container of the application -->
+<div class="container-fluid mainContainer">
+  <div class="row" style="height: 100vh">
+    <!--SideBar of the container-->
+    <!--***********************Start***********************-->
+    <div
+      class="col-2 sideBar text-white"
+      [ngStyle]="{ display: isDisplayed ? 'block' : 'none' }"
+    >
+      <div class="companyName">
+        <span id="icon">B</span>
+        <span id="name">BrickClay</span>
+      </div>
+
+      <div class="line"></div>
+      <!--First Module of the sideBar-->
+      <div class="firstModule Module">
+        <div
+          class="dashboard mainPage"
+          (click)="showDashboardPages('/sideBar/dashboard')"
+        >
+          <i class="fas fa-home"></i><a>Dashboard </a>
+        </div>
+        <div
+          class="dashboard help"
+          (click)="showDashboardPages('/sideBar/help')"
+        >
+          <i class="fas fa-th-large"></i> <a>Help</a>
+        </div>
+      </div>
+      <!--Second Module of the sideBar-->
+      <div class="topicName">CRAFTED</div>
+      <div class="secondModule Module">
+        <div class="Pages dashboard" (click)="showDropDown(1)">
+          <i class="fa-regular fa-file"></i><a>Attendance</a
+          ><i class="fa-solid fa-caret-down dropDownIcon"></i>
+        </div>
+        <div
+          class="dropDown"
+          [ngClass]="active === 1 ? 'showDropDownPages' : 'hideDropDownPages'"
+        >
+          <ul>
+            <li (click)="showDashboardPages('/sideBar/attendance')">
+              <a>Take Attendance</a>
+            </li>
+            <li><a>Setting</a></li>
+          </ul>
+        </div>
+        <div class="Account dashboard" (click)="showDropDown(2)">
+          <i class="fa-regular fa-user"></i><a>Account</a
+          ><i class="fa-solid fa-caret-down dropDownIcon"></i>
+        </div>
+        <div
+          class="dropDown"
+          [ngClass]="
+            active === 2 ? 'showDropDownAccount' : 'hideDropDownAccount'
+          "
+        >
+          <ul>
+            <li><a>Account</a></li>
+            <li><a>Setting</a></li>
+          </ul>
+        </div>
+        <div class="Error dashboard" (click)="showDropDown(3)">
+          <i class="fa-solid fa-bomb"></i><a>Error</a
+          ><i class="fa-solid fa-caret-down dropDownIcon"></i>
+        </div>
+        <div
+          class="dropDown"
+          [ngClass]="active === 3 ? 'showDropDownError' : 'hideDropDownError'"
+        >
+          <ul>
+            <li><a>Account</a></li>
+            <li><a>Setting</a></li>
+          </ul>
+        </div>
+        <div class="Widgets dashboard" (click)="showDropDown(4)">
+          <i class="fa-solid fa-star"></i><a>Widgets</a
+          ><i class="fa-solid fa-caret-down dropDownIcon"></i>
+        </div>
+        <div
+          class="dropDownWidgets dropDown"
+          [ngClass]="
+            active === 4 ? 'showDropDownWidgets' : 'hideDropDownWidgets'
+          "
+        >
+          <ul>
+            <li><a>Account</a></li>
+            <li><a>Setting</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Third Module of the sideBar-->
+      <div class="topicName">APPS</div>
+      <div class="thirdModule Module">
+        <div class="User dashboard" (click)="showDropDown(5)">
+          <i class="fa-solid fa-star"></i>
+          <a>User</a><i class="fa-solid fa-caret-down dropDownIcon"></i>
+        </div>
+        <div
+          class="dropDownUser dropDown"
+          [ngClass]="active === 5 ? 'showDropDownUser' : 'hideDropDownUser'"
+        >
+          <ul>
+            <li (click)="showDashboardPages('/sideBar/user')"><a>Users</a></li>
+            <li (click)="showDashboardPages('/sideBar/department')">
+              <a>Department</a>
+            </li>
+            <li><a>Permissions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--***********************End***********************-->
+
+    <!--COntent Side of the container-->
+
+    <!--***********************Start***********************-->
+    <div class="col bs-success-inverse contentBox">
+      <!--Top header of the dashboard-->
+      <div class="row" style="color: red">
+        <div class="col bg-success-inverse header">
+          <div class="button">
+            <button (click)="ToggleSideBar()">Hello</button>
+          </div>
+          <div class="options">
+            <ul>
+              <li>Dashboard</li>
+              <li>User</li>
+              <li>Role</li>
+              <li>Account</li>
+              <li>Attendance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--Main Content body of the dashboard-->
+      <div class="row">
+        <div class="col mainContentBody">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+    <!--***********************End***********************-->
+  </div>
+</div>

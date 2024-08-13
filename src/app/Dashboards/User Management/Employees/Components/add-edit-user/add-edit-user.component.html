@@ -1,0 +1,539 @@
+<div class="dialogBox">
+  <div class="header">
+    <div class="dialogHeading">
+      <h3>Employee Details</h3>
+    </div>
+    <button (click)="closeDialogBox('closeBox')">&times;</button>
+  </div>
+  <h5 class="Topic">Personal Detail:</h5>
+  <form
+    [formGroup]="personDataForm"
+    novalidate
+    (ngSubmit)="addAndUpdateEmployeeData()"
+  >
+    <div class="dialogForm">
+      <!--This is my first module of the form-->
+      <div class="firstModule">
+        <div class="part1">
+          <!--FirstName with validations-->
+          <div class="input input1">
+            <label for="firstName">First Name</label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+              [class.is-invalid]="
+                value['firstName'].invalid && value['firstName'].touched
+              "
+            />
+            <!--Start validation-->
+            <div
+              class="text-danger"
+              *ngIf="value['firstName'].touched && value['firstName'].invalid"
+            >
+              <div
+                *ngIf="
+                  value['firstName'].errors &&
+                  value['firstName'].errors['required']
+                "
+              >
+                *Required
+              </div>
+              <div
+                *ngIf="
+                  value['firstName'].errors &&
+                  value['firstName'].errors['minlength']
+                "
+              >
+                length(3)
+              </div>
+            </div>
+            <!--End validation-->
+          </div>
+          <!--End of First Name-->
+
+          <!--LastName with validations-->
+          <div class="input input2">
+            <label for="lastName">Last Name</label>
+            <input
+              id="lastName"
+              type="text"
+              placeholder="Last Name"
+              formControlName="lastName"
+              [class.is-invalid]="
+                value['lastName'].invalid && value['lastName'].touched
+              "
+            />
+            <!--Start validation-->
+            <div
+              class="text-danger"
+              *ngIf="value['lastName'].touched && value['lastName'].invalid"
+            >
+              <div
+                *ngIf="
+                  value['lastName'].errors &&
+                  value['lastName'].errors['required']
+                "
+              >
+                *Required
+              </div>
+              <div
+                *ngIf="
+                  value['lastName'].errors &&
+                  value['lastName'].errors['minlength']
+                "
+              >
+                length(3)
+              </div>
+            </div>
+            <!--End validation-->
+          </div>
+
+          <!--Email with validations-->
+          <div class="input input3">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              formControlName="email"
+              [class.is-invalid]="
+                value['email'].invalid && value['email'].touched
+              "
+            />
+            <!--Start validation-->
+            <div
+              class="text-danger"
+              *ngIf="value['email'].touched && value['email'].invalid"
+            >
+              <div
+                *ngIf="
+                  value['email'].errors && value['email'].errors['required']
+                "
+              >
+                *Required
+              </div>
+              <div
+                *ngIf="value['email'].errors && value['email'].errors['pattern']"
+              >
+                There should be Email format
+              </div>
+            </div>
+            <!--End validation-->
+          </div>
+        </div>
+        <div class="part2">
+          <img [src]="url" alt=".." />
+          <input
+            id="fileInput"
+            type="file"
+            accept="image/*"
+            (change)="selectChangeFile($event)"
+            #fileInput
+            formControlName="image"
+          />
+          <button type="button" (click)="triggerInputFile()">
+            Upload Image
+          </button>
+        </div>
+      </div>
+
+      <!--This is my second form of the module-->
+      <div class="secondModule">
+        <!--Date of Birth validation-->
+        <div class="input input1">
+          <label for="dob">DOB</label>
+          <input id="dob" type="date" formControlName="dob" />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['dob'].touched && value['dob'].invalid"
+          >
+            <div *ngIf="value['dob'].errors && value['dob'].errors['required']">
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+
+        <!--HireDate validations-->
+        <div class="input input2">
+          <label for="hireDate">Hire Date</label>
+          <input id="hireDate" type="date" formControlName="hireDate" />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['hireDate'].touched && value['hireDate'].invalid"
+          >
+            <div
+              *ngIf="
+                value['hireDate'].errors && value['hireDate'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+
+        <!--Departments validations-->
+        <div class="input input2">
+          <label for="">Dept Head:</label>
+          <select name="" id="" formControlName="deptId">
+            <option value="" disabled selected>Select Department</option>
+            <option *ngFor="let item of deptData" [value]="item.departmentId">
+              {{ item.deptName }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!--This is my third module of the form-->
+      <div class="thirdModule">
+        <!--Phone1 validations-->
+        <div class="input input1">
+          <label for="phone1">PNO1</label>
+          <input
+            id="phone1"
+            type="text"
+            placeholder="Phone Number"
+            formControlName="phone1"
+          />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['phone1'].touched && value['phone1'].invalid"
+          >
+            <div
+              *ngIf="
+                value['phone1'].errors && value['phone1'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+        <div class="input input2">
+          <label for="phone2">PNO2</label>
+          <input
+            id="phone2"
+            type="text"
+            placeholder="Phone Number"
+            formControlName="phone2"
+          />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['phone2'].touched && value['phone2'].invalid"
+          >
+            <div
+              *ngIf="
+                value['phone2'].errors && value['phone2'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+        <div class="input input3">
+          <label for="phone3">PNO3</label>
+          <input
+            id="phone3"
+            type="text"
+            placeholder="Phone Number"
+            formControlName="phone3"
+          />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['phone3'].touched && value['phone3'].invalid"
+          >
+            <div
+              *ngIf="
+                value['phone3'].errors && value['phone3'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+      </div>
+
+      <!--This is my fourth module-->
+      <div class="fourthModule">
+        <!--Nationality validation-->
+        <div class="input input1">
+          <label for="nationality">Nationality</label>
+          <select
+            id="nationality"
+            name="nationality"
+            formControlName="nationality"
+          >
+            <option value="" disabled selected>Select Nationality</option>
+            <option *ngFor="let value of allCountry" [value]="value.name">
+              {{ value.name }}
+            </option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['nationality'].touched && value['nationality'].invalid"
+          >
+            <div
+              *ngIf="
+                value['nationality'].errors &&
+                value['nationality'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+        <!--Marital Status validation-->
+        <div class="input input2">
+          <label for="maritalStatus">Married:</label>
+          <select
+            id="maritalStatus"
+            name="maritalStatus"
+            formControlName="maritalStatus"
+          >
+            <option value="" disabled selected>Select Marital Status</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="
+              value['maritalStatus'].touched && value['maritalStatus'].invalid
+            "
+          >
+            <div
+              *ngIf="
+                value['maritalStatus'].errors &&
+                value['maritalStatus'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+
+        <div class="input input3">
+          <label for="jobType">Job Type:</label>
+          <select id="jobType" name="jobType" formControlName="jobType">
+            <option value="" disabled selected>Select Job Type</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="intern">Intern</option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['jobType'].touched && value['jobType'].invalid"
+          >
+            <div
+              *ngIf="
+                value['jobType'].errors && value['jobType'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+      </div>
+
+      <!--This is my fifth module-->
+      <div class="fifthModule">
+        <!--Gender validatons-->
+        <div class="input input2">
+          <label for="gender" class="Gender">Gender:</label>
+          <div class="Option">
+            <label for="male">Male</label>
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              formControlName="gender"
+            />
+          </div>
+
+          <div class="Option">
+            <label for="female">Female</label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              formControlName="gender"
+            />
+          </div>
+
+          <div class="Option">
+            <label for="other">Other</label>
+            <input
+              type="radio"
+              id="other"
+              name="gender"
+              value="other"
+              formControlName="gender"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+      <h5 class="Topic">Address Detail:</h5>
+
+      <!--This is my sixth module-->
+      <div class="sixthModule">
+        <!--Country Validatons-->
+        <div class="input input1">
+          <label for="country">Country:</label>
+          <select id="country" name="country" formControlName="country">
+            <option value="" disabled selected>Select Country</option>
+            <option *ngFor="let value of allCountry" [value]="value.name">
+              {{ value.name }}
+            </option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['country'].touched && value['country'].invalid"
+          >
+            <div
+              *ngIf="
+                value['country'].errors && value['country'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+        <!--State Validations-->
+        <div class="input input2">
+          <label for="state">State:</label>
+          <select id="state" name="state" formControlName="state">
+            <option value="" disabled selected>Select State</option>
+            <option *ngFor="let value of allCountry" [value]="value.name">
+              {{ value.name }}
+            </option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['state'].touched && value['state'].invalid"
+          >
+            <div
+              *ngIf="value['state'].errors && value['state'].errors['required']"
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+
+        <!--City Validations-->
+        <div class="input input3">
+          <label for="city">City:</label>
+          <select id="city" name="city" formControlName="city">
+            <option value="" disabled selected>Select City</option>
+            <option *ngFor="let value of allCountry" [value]="value.name">
+              {{ value.name }}
+            </option>
+          </select>
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['city'].touched && value['city'].invalid"
+          >
+            <div
+              *ngIf="value['city'].errors && value['city'].errors['required']"
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+      </div>
+
+      <!--This is my seventh module-->
+      <div class="seventhModule">
+        <!--Postal Code Validations-->
+        <div class="input input1">
+          <label for="postalCode">Postal Code:</label>
+          <input
+            id="postalCode"
+            type="text"
+            placeholder="Code"
+            formControlName="postalCode"
+          />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="value['postalCode'].touched && value['postalCode'].invalid"
+          >
+            <div
+              *ngIf="
+                value['postalCode'].errors &&
+                value['postalCode'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+
+        <!--street Address Validations-->
+        <div class="input input2">
+          <label for="streetAddress">Street Address:</label>
+          <input
+            id="streetAddress"
+            type="text"
+            placeholder="Street"
+            formControlName="streetAddress"
+          />
+          <!--Start validation-->
+          <div
+            class="text-danger"
+            *ngIf="
+              value['streetAddress'].touched && value['streetAddress'].invalid
+            "
+          >
+            <div
+              *ngIf="
+                value['streetAddress'].errors &&
+                value['streetAddress'].errors['required']
+              "
+            >
+              *Required
+            </div>
+          </div>
+          <!--End validation-->
+        </div>
+      </div>
+
+      <div class="buttonModule">
+        <button type="reset">Clear</button>
+        <button
+          type="submit"
+          [disabled]="!personDataForm.valid"
+          [ngClass]="{ 'disabled-button': !personDataForm.valid }"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="attendanceDialogBox">
+  <div class="heading">
+    <h5>Add Attendance</h5>
+    <button (click)="closeDialogBox()" >&times;</button>
+  </div>
+  <div class="options">
+    <select name="" id="" (change)="showattendOptionBox($event)">
+      <option value="" disabled selected>Select Option</option>
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+      <option value="Leave">Leave</option>
+    </select>
+  </div>
+  <div class="present" *ngIf="attendOption == 'Present'">
+    <div class="takeTime">
+      <div class="time inTime">
+        <label for="">In Time</label>
+        <input type="time" />
+      </div>
+      <div class="time outTime">
+        <label for="">Out Time</label>
+        <input type="time" />
+      </div>
+    </div>
+  </div>
+  <div class="Leave" *ngIf="attendOption == 'Leave'">
+    <select name="" id="">
+      <option value="">Issue of leave</option>
+      <option value="">Health Issue</option>
+      <option value="">Marriage</option>
+      <option value="">Urgent Work</option>
+      <option value="">Other</option>
+    </select>
+    <div class="leaveDate">
+      <div class="Date startDate">
+        <label for="">Start Date</label>
+        <input type="date" />
+      </div>
+      <div class="Date endDate">
+        <label for="">End Date</label>
+        <input type="date" />
+      </div>
+    </div>
+    <div class="reason">
+      <label for="reason">Reason:</label>
+      <textarea id="reason" name="reason" rows="4" cols="30"></textarea>
+    </div>
+  </div>
+  <div class="submitBtn">
+    <button class="Clear">Clear</button>
+    <button class="Submit">Submit<span>id</span></button>
+  </div>
+</div>

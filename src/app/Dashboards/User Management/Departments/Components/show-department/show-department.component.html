@@ -1,0 +1,80 @@
+<!--Heading of the box-->
+<div class="departmentData">
+  <div class="userDataHeading">
+    <div class="heading">
+      <h2>Departments</h2>
+      <p>User Management <span>departments</span></p>
+    </div>
+    <div class="buttons">
+      <button class="Filter btn">Filter</button>
+      <button class="Create btn">Create</button>
+    </div>
+  </div>
+
+  <!--Box where department boxes shows-->
+  <div class="departmentBox">
+    <div class="tableHeader">
+      <div class="searchBar">
+        <input type="text" placeholder="Search User" [(ngModel)]="searchString" (input)="searchDept()"/>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="addButton">
+        <button class="btn" (click)="showDepartmentBox()">
+          Add Department
+        </button>
+      </div>
+    </div>
+    <div class="itemBox">
+      <div class="deptBox" *ngFor="let item of deptData">
+        <div class="deptIcons">
+          <div class="headName">
+            <h3>
+              {{ item.deptName
+              }}<span style="display: none">{{ item.departmentId }}</span>
+            </h3>
+          </div>
+          <div class="icons">
+            <i
+              class="fas fa-trash-alt"
+              (click)="
+                deleteDepartment(item.departmentId ? item.departmentId : -1)
+              "
+            ></i>
+            <i
+              class="fa-solid fa-pen"
+              (click)="
+                editDepartment(item.departmentId ? item.departmentId : -1)
+              "
+            ></i>
+            <i
+              class="fas fa-arrow-right"
+              (click)="
+                showDeptEmp(
+                  item.departmentId ? item.departmentId : -1,
+                  item.deptName ? item.deptName : ''
+                )
+              "
+            ></i>
+          </div>
+        </div>
+        <p>Total Employees in this department</p>
+        <div class="pictures">
+          <div class="item">A</div>
+          <div class="item" style="background-color: red">A</div>
+          <div class="item" style="background-color: pink">A</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  [ngClass]="
+    showDepartment === true ? 'showDepartmentBox' : 'closeDepartmentBox'
+  "
+>
+  <app-add-edit-department
+    (dialogEmitter)="closeDepartmentBox()"
+    [deptId]="deptId"
+  ></app-add-edit-department>
+</div>

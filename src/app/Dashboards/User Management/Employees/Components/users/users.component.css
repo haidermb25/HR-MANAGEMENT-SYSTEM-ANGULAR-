@@ -1,0 +1,116 @@
+.UserData{
+    background-color: white;
+    color: black;
+    height: 86vh;
+    width: 100%;
+}
+.userDataTable{
+    border: 0.5px solid rgb(220, 218, 218);
+    height: 90%;
+    border-radius: 10px
+}
+.tablePagination{
+    display: flex;
+    justify-content: end;
+    padding: 20px 34px 10px 20px;
+    font-weight: 700;
+}
+.tablePagination button{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 16px 8px 16px;
+    margin: 0px 8px 0px 8px;
+    border-radius: 6px;
+}
+.pagination h4{
+    color: rgb(131, 130, 130);
+}
+.tablePagination .info{
+    color: rgb(131, 130, 130);
+
+}
+.tableImage h3{
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    background-color: rgb(216, 185, 216);
+    color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tables{
+    overflow-y: auto;
+}
+.tables table thead tr th:nth-child(5){
+   padding-left:10%;
+}
+
+.tables table tbody tr{
+    height: 30px;
+}
+.tables table tbody tr td{
+    border: 10px solid black;
+}
+.tables table tbody tr td:nth-child(6),thead tr th:nth-child(6){
+    display: none;
+} 
+.tables table tbody tr td:nth-child(5){
+    padding-left: 8%;
+    padding-bottom: 2%;
+    
+}
+.tables table thead tr th:nth-child(4){
+    padding-left:8%;
+ } 
+ .tables table tbody tr td:nth-child(3){
+    padding-left: 1%;
+}
+.tables table thead tr th:nth-child(2){
+    padding-left:1%;
+ } 
+ .tables table tbody tr td{
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+ 
+.dialogBox {
+    transition: 0.5s ease; /* Adjust the duration and timing function as needed */
+}
+
+
+ /*Call the dialog box*/
+ .hideDialogBox {
+    position: fixed;
+    top: 0px;
+    right: -50vw;
+}
+
+.showDialogBox {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    z-index: 99;
+}
+
+/*Call the user info box*/
+.hideUserInfoBox{
+    position:absolute;
+    top: -800px;
+    left: 0px;
+    z-index: 10;
+    transition: top ease-in 0.5s;
+}
+.showUserInfoBox{
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 10;
+    transition: top ease-in 0.5s;
+}
+
+.userId{
+    display: none;
+}

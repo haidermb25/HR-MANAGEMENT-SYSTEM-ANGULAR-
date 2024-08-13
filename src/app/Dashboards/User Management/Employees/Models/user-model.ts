@@ -1,0 +1,25 @@
+export class userModel
+{
+      employeeId:number|undefined
+      firstName:string|undefined 
+      lastName:string|undefined 
+      hireDate:Date|undefined 
+      dateOfBirth:Date|undefined 
+      gender:string|undefined 
+      email:string|undefined 
+      nationality:string|undefined 
+      maritalStatus:string|undefined 
+      employmentStatus:string|undefined 
+      photo:string|undefined 
+      homeContactPhone:string|undefined 
+      emergencyContactPhone:string|undefined 
+      personalContactPhone:string|undefined 
+      country:string|undefined 
+      state:string|undefined 
+      postalCode:string|undefined 
+      city:string|undefined 
+      street:string|undefined 
+      salaryId?:number|null 
+      deptId:number|undefined 
+      jobId:number|undefined 
+}
